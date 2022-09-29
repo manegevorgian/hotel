@@ -26,7 +26,8 @@
                 </th>
                 <th>
                     <select name="typeFilter" id="typeFilter" class="form-select">
-                        @foreach($types as $type)
+                    <option value="" selected="selected">Select Type</option>
+                    @foreach($types as $type)
                             <option value="{{$type->id}}">{{$type->name}}</option>
                         @endforeach
                     </select>

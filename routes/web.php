@@ -25,3 +25,4 @@ Route::resource('rooms', \App\Http\Controllers\RoomController::class)->except('s
 Route::resource('types', \App\Http\Controllers\TypeController::class);
 Route::resource('booking', \App\Http\Controllers\BookingController::class)->except(['index', 'show','create', 'edit']);
 Route::get('booking/create/{id}',[\App\Http\Controllers\BookingController::class, 'create'])->name('booking.create');
+Route::post('rooms/filter',[\App\Http\Controllers\RoomController::class, 'filter']);

@@ -99,4 +99,13 @@ class RoomController extends Controller
         $room->delete();
         return redirect('/rooms')->with('success', 'Room Data is successfully deleted');
     }
+    public function filter(Request $request)
+    {
+        $data = [
+            'rooms' => Room::where('type_id', $request->type_id)->with('type')->paginate(8,['*'], 'page', $request->page),
+            'userBooked' => UserRoom::query()->select('room_id')->where(['user_id'=> Auth::id(), 'status'=>'Booked'])->pluck('room_id')->toArray(),
+            'admin' => Auth::user()->admin
+        ];
+        return response()->json($data);
+    }
 }
