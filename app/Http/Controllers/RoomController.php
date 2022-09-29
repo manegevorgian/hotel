@@ -99,6 +99,11 @@ class RoomController extends Controller
         $room->delete();
         return redirect('/rooms')->with('success', 'Room Data is successfully deleted');
     }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function filter(Request $request)
     {
         $data = [
