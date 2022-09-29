@@ -22,10 +22,10 @@
                 <th colspan="3" class="text-center">Actions</th>
                 @endif
                 <th>
-                    <label for="typeFilter" class="form-label">Filter By Type:</label>
+                    <label for="typeFilter" class="form-label"></label>
                 </th>
                 <th>
-                    <select name="typeFilter" id="typeFilter" class="form-select">
+                    <select name="typeFilter" id="typeFilter" class="form-select w-50">
                     <option value="" selected="selected">Select Type</option>
                     @foreach($types as $type)
                             <option value="{{$type->id}}">{{$type->name}}</option>
